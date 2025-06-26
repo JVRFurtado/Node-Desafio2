@@ -48,12 +48,78 @@ async function removeItem(userCart, item) {
     }
 }
 
-// -> remover um item - diminui um item
-async function displayCart(userCart) {
-    console.log(`\nShopee cart list:`);
-    userCart.forEach((item, index) => {
-        console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
-    });
+// -> mostra o carrinho
+async function displayCart(userCart, filter) {
+    // -> mostra todos os itens do carrinho, sem filtro
+    if(filter === undefined || filter === "all") {
+        console.log(`\nShopee cart list:`);
+        userCart.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
+        });
+    }
+
+    // -> mostra todos os itens do carrinho, com o filtro de maior até o menor preço
+    if(filter === "maior preço") {
+        console.log(`\nShopee cart list filter "maior preço":`);
+        userCart.sort((a, b) => b.price - a.price);
+        userCart.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
+        });
+    }
+
+    // -> mostra todos os itens do carrinho, com o filtro de menor até o maior preço
+    if(filter === "menor preço") {
+        console.log(`\nShopee cart list filter "menor preço":`);
+        userCart.sort((a, b) => a.price - b.price);
+        userCart.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
+        });
+    }
+
+    // -> mostra os itens do carrinho com filtro o filtro "brinquedo"
+    if(filter === "brinquedo") {
+        console.log(`\nShopee cart list filter "brinquedo":`);
+        const filterCart = userCart.filter(f => f.type === filter)
+        filterCart.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
+        });
+    }
+
+    // -> mostra os itens do carrinho com filtro o filtro "roupa"
+    if(filter === "roupa") {
+        console.log(`\nShopee cart list filter "roupa":`);
+        const filterCart = userCart.filter(f => f.type === filter)
+        filterCart.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
+        });
+    }
+
+    // -> mostra os itens do carrinho com filtro o filtro "livro"
+    if(filter === "livro") {
+        console.log(`\nShopee cart list filter "livro":`);
+        const filterCart = userCart.filter(f => f.type === filter)
+        filterCart.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
+        });
+    }
+
+    // -> mostra os itens do carrinho com filtro o filtro "música"
+    if(filter === "música") {
+        console.log(`\nShopee cart list filter "música":`);
+        const filterCart = userCart.filter(f => f.type === filter)
+        filterCart.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
+        });
+    }
+    
+    // -> mostra os itens do carrinho com filtro o filtro "eletrônico"
+    if(filter === "eletrônico") {
+        console.log(`\nShopee cart list filter "eletrônico":`);
+        const filterCart = userCart.filter(f => f.type === filter)
+        filterCart.forEach((item, index) => {
+            console.log(`${index + 1}. ${item.name} - R$ ${item.price} | ${item.quantity}x | Subtotal = ${item.subtotal()}`);      
+        });
+    }
 }
 
 // exporta as funções
