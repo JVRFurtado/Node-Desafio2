@@ -71,7 +71,7 @@ Este projeto está licenciado sob a licença ISC.
 
 
 
-## 🙋‍♀️ Autor
+## 👨‍🔧 Autor
 
 Desenvolvido com 💻 por JVRFurtado durante o desafio da [DIO](https://www.dio.me/).
 
